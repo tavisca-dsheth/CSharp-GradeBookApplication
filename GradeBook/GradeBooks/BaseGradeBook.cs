@@ -118,15 +118,15 @@ namespace GradeBook.GradeBooks
             switch (letterGrade)
             {
                 case 'A':
-                    return 4;
+                    return studentType.Equals(StudentType.Standard) ? 4 : 5;
                 case 'B':
-                    return 3;
+                    return studentType.Equals(StudentType.Standard) ? 3 : 4;
                 case 'C':
-                    return 2;
+                    return studentType.Equals(StudentType.Standard) ? 2 : 3;
                 case 'D':
-                    return 1;
+                    return studentType.Equals(StudentType.Standard) ? 1 : 2;
                 case 'F':
-                    return 0;
+                    return studentType.Equals(StudentType.Standard) ? 0 : 1;
             }
             return 0;
         }
