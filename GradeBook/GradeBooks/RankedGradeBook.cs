@@ -16,7 +16,7 @@ namespace GradeBook.GradeBooks
         {
             if (Students.Count < 5)
             {
-                throw new InvalidOperationException;
+                throw new InvalidOperationException();
             }
             if (averageGrade > 80)
                 return 'A';
