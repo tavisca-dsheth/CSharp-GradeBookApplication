@@ -277,9 +277,9 @@ namespace GradeBook.GradeBooks
             return JsonConvert.DeserializeObject(json, gradebook);
         }
 
-        public static implicit operator BaseGradeBook(StandardGradeBook v)
+        /*public static implicit operator BaseGradeBook(StandardGradeBook v)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }
