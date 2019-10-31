@@ -11,9 +11,10 @@ namespace GradeBook.GradeBooks
 {
     public class BaseGradeBook
     {
-        public GradeBookType Type;
+        public GradeBookType type;
         public string Name { get; set; }
         public List<Student> Students { get; set; }
+        public GradeBookType Type { get => type; set => type = value; }
 
         public BaseGradeBook(string name)
         {
