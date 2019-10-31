@@ -115,18 +115,37 @@ namespace GradeBook.GradeBooks
 
         public virtual double GetGPA(char letterGrade, StudentType studentType)
         {
-            switch (letterGrade)
+            if (IsWeighted)
             {
-                case 'A':
-                    return studentType.Equals(StudentType.Standard) ? 4 : 5;
-                case 'B':
-                    return studentType.Equals(StudentType.Standard) ? 3 : 4;
-                case 'C':
-                    return studentType.Equals(StudentType.Standard) ? 2 : 3;
-                case 'D':
-                    return studentType.Equals(StudentType.Standard) ? 1 : 2;
-                case 'F':
-                    return studentType.Equals(StudentType.Standard) ? 0 : 1;
+                switch (letterGrade)
+                {
+                    case 'A':
+                        return studentType.Equals(StudentType.Standard) ? 4 : 5;
+                    case 'B':
+                        return studentType.Equals(StudentType.Standard) ? 3 : 4;
+                    case 'C':
+                        return studentType.Equals(StudentType.Standard) ? 2 : 3;
+                    case 'D':
+                        return studentType.Equals(StudentType.Standard) ? 1 : 2;
+                    case 'F':
+                        return studentType.Equals(StudentType.Standard) ? 0 : 1;
+                }
+            }
+            else
+            {
+                switch (letterGrade)
+                {
+                    case 'A':
+                        return 4;
+                    case 'B':
+                        return 3;
+                    case 'C':
+                        return 2;
+                    case 'D':
+                        return 1;
+                   case 'F':
+                        return 0;
+                }
             }
             return 0;
         }
